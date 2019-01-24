@@ -13,8 +13,8 @@
           </figure>
         </div>
         <div class="media-content">
-          <p class="title is-4">John Smith</p>
-          <p class="subtitle is-6">@johnsmith</p>
+          <p class="title is-4">{{ name }}</p>
+          <p class="subtitle is-6">{{ email }}</p>
         </div>
       </div>
 
@@ -27,12 +27,34 @@
       </div>
     </div>
   </div>
-</div>
+
 </template>
 
 <script>
 export default {
   name: 'Note',
+  props: {
+    image : {
+      type : String,
+      default : 'No url'
+    },
+    name: {
+      type : String,
+      default : 'No Name',
+    },
+    email : {
+      type : String,
+      default : 'nomail@nomail.com'
+    },
+    messagge : {
+      type: String,
+      default : 'No Message'
+    },
+    date : {
+      type: Date,
+      default : function() { return (new Date())},
+    },
+  }
 }
 </script>
 
